@@ -13,10 +13,6 @@
     {
       "matchPackagePatterns": ["bufbuild/buf"],
       "ignoreUnstable": false
-    },
-    {
-      "matchManagers": ["regex"],
-      "pinDigests": true
     }
   ]
 }
