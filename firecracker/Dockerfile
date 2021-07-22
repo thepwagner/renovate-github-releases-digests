@@ -14,3 +14,5 @@ RUN curl -o /tmp/firecracker.tgz -L "https://github.com/firecracker-microvm/fire
   && ln -s /opt/firecracker/firecracker-${FIRECRACKER_VERSION}-x86_64 /usr/local/bin/firecracker \
   && ln -s /opt/firecracker/jailer-${FIRECRACKER_VERSION}-x86_64 /usr/local/bin/jailer \
   && rm -f /tmp/firecracker.tgz
+
+RUN /usr/local/bin/firecracker --version

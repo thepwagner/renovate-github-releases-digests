@@ -10,3 +10,5 @@ ARG BUF_CHECKSUM=53933427cb5518830a3fcf11d3bd9b6e3fb36eae9086731484b8ab50630c9d0
 RUN curl -o /usr/local/bin/buf -L "https://github.com/bufbuild/buf/releases/download/${BUF_VERSION}/buf-Linux-x86_64" \
   && echo "$BUF_CHECKSUM  /usr/local/bin/buf" | sha256sum -c \
   && chmod +x /usr/local/bin/buf
+RUN /usr/local/bin/buf --version
+

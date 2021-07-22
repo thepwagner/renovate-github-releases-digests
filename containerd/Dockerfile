@@ -1,5 +1,7 @@
-FROM alpine:3.14.0
-RUN apk --no-cache add curl
+FROM debian:bullseye-slim
+RUN apt-get update \
+  && apt-get install -y curl \
+  && rm -Rf /var/lib/apt/lists/*
 
 # https://github.com/containerd/containerd/releases
 # - publishes individual ${file}.sha256sum files
@@ -11,3 +13,5 @@ RUN curl -o /tmp/container.tgz -L "https://github.com/containerd/containerd/rele
   && echo "$CONTAINERD_CHECKSUM  /tmp/container.tgz" | sha256sum -c \
   && tar -C /usr/local -xvvzf /tmp/container.tgz \
   && rm -f /tmp/container.tgz
+
+RUN /usr/local/bin/containerd --version

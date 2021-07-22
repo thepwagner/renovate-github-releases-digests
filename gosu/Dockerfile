@@ -11,3 +11,4 @@ ARG GOSU_CHECKSUM=0f25a21cf64e58078057adc78f38705163c1d564a959ff30a891c31917011a
 RUN curl -Lo /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64" \
    && echo "$GOSU_CHECKSUM  /usr/local/bin/gosu" | sha256sum -c \
    && chmod +x /usr/local/bin/gosu
+RUN /usr/local/bin/gosu --version
