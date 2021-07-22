@@ -9,6 +9,7 @@
       "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
     }
   ],
+  "pinDigests": true,
   "packageRules": [
     {
       "matchPackagePatterns": ["bufbuild/buf"],
