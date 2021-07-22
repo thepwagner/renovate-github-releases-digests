@@ -3,6 +3,7 @@ RUN apk --no-cache add curl
 
 # https://github.com/containerd/containerd/releases
 # - publishes individual ${file}.sha256sum files
+# renovate: datasource=github-releases depName=containerd/containerd versioning=semver
 ARG CONTAINERD_VERSION=1.5.3
 ARG CONTAINERD_CHECKSUM=eb9dc9b36b6eadaa183ea7eebd42c57e16ae3258c34b9f1726f698d4f8e43d89
 

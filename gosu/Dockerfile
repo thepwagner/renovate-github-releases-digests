@@ -4,6 +4,7 @@ RUN apk --no-cache add curl
 # https://github.com/tianon/gosu/releases
 # - publishes gpg signatures, but we won't use them :/
 # - publishes SHA256SUMS file describing all assets
+# renovate: datasource=github-releases depName=containerd/containerd versioning=loose
 ARG GOSU_VERSION=1.12
 ARG GOSU_CHECKSUM=0f25a21cf64e58078057adc78f38705163c1d564a959ff30a891c31917011a54
 
