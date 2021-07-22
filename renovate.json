@@ -8,5 +8,11 @@
       ],
       "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
     }
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["bufbuild/buf"],
+      "ignoreUnstable": false
+    }
   ]
 }
