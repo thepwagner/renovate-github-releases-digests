@@ -11,6 +11,7 @@ RUN curl -o /tmp/firecracker.tgz -L "https://github.com/firecracker-microvm/fire
   && echo "$FIRECRACKER_CHECKSUM  /tmp/firecracker.tgz" | sha512sum -c \
   && mkdir -p /opt/firecracker \
   && tar -C /opt/firecracker --strip-components=1 -xvvzf /tmp/firecracker.tgz \
+  && chmod +x /opt/firecracker/*-x86_64 \
   && ln -s /opt/firecracker/firecracker-${FIRECRACKER_VERSION}-x86_64 /usr/local/bin/firecracker \
   && ln -s /opt/firecracker/jailer-${FIRECRACKER_VERSION}-x86_64 /usr/local/bin/jailer \
   && rm -f /tmp/firecracker.tgz
